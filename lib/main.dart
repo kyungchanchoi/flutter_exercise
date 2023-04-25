@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
+
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
-  Widget build(BuildContext context)
-  {
-      return MaterialApp(
-        title: 'First App',
-        theme: ThemeData(
-          primarySwatch: Colors.blue
-        ),
-        home: MyHomePage()
-      );
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'First app',
+      home: const MyCard(),
+    );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyCard extends StatelessWidget {
+  const MyCard({super.key});
+
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First App'),
+        title: Text('Second App'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+        elevation: 0.0,
       ),
-      body: Center(
+
+      body : Center(
         child: Column(
-          children: <Widget>[
-            Text("Hello"),
-            Text("Hi"),
-            Text("World")
-          ],
-        ),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('hi'),
+              Text('hello')
+            ]),
       ),
     );
   }
